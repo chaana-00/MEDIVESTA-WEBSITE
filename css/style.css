@@ -2391,6 +2391,18 @@ Back To Top Section
   background-color: #ffffff;
   border-top: 1px solid #ccc; }
 
+  /* Center Navigation */
+.navbar-main .navbar-nav {
+    float: none !important;
+    margin: 0 auto !important;
+    display: table !important;
+    text-align: center;
+}
+.navbar-main .navbar-nav > li {
+    float: none !important;
+    display: inline-block !important;
+}
+
 .navbar-main {
   background-color: transparent;
   border-radius: 0;
@@ -2441,12 +2453,12 @@ Back To Top Section
   .navbar-main .nav > li.active > a,
   .navbar-main .nav > li > a:hover,
   .navbar-main .nav > li > a:focus {
-    color: #46c2ca;
+    color: #e67300;
     background-color: transparent; }
   .navbar-main .nav .open > a, .navbar-main .nav .open > a:hover, .navbar-main .nav .open > a:focus {
     background-color: transparent;
     border-color: transparent;
-    color: #ed1c24; }
+    color: #e67300; }
   .navbar-main .caret {
     margin-left: 10px; }
   .navbar-main .nav.navbar-right > li {
@@ -2467,7 +2479,7 @@ Back To Top Section
         padding: 10px 20px;
         color: #ffffff; }
         .navbar-main .dropdown-menu > li a:hover {
-          background-color: #46c2ca;
+          background-color: #e67300;
           color: #041e42; }
 
 /**
