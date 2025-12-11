@@ -1,242 +1,131 @@
+<script>
 var map;
-      var peta = document.getElementById('maps');
 
-      var myLat = '-7.452278',
-		myLng = '112.708992',
-		myMarkerx = 'images/cd-icon-location.png';
-	
-	
-		var latitude = myLat,
-			longitude = myLng,
-			markerx = myMarkerx,
-			map_zoom = 14;
+// Correct Medivesta coordinates
+var myLat = 6.835137;
+var myLng = 79.999512;
 
-		//google map custom marker icon - .png fallback for IE11
-		var is_internetExplorer11= navigator.userAgent.toLowerCase().indexOf('trident') > -1;
-		var marker_url = ( is_internetExplorer11 ) ? markerx : markerx;
+// Custom marker (remove if not using)
+var myMarkerx = "images/cd-icon-location.png";
 
-		//define the basic color of your map, plus a value for saturation and brightness
-		var main_color = '#000000',
-			saturation_value= -80,
-			brightness_value= 5;
+// Map styling
+var main_color = '#000000',
+    saturation_value = -80,
+    brightness_value = 5;
 
-		//we define here the style of the map
-		var style= [
-			{
-				//set saturation for the labels on the map
-				elementType: "labels",
-				stylers: [
-					{saturation: saturation_value}
-				]
-			},
-			{ //poi stands for point of interest - don't show these lables on the map
-				featureType: "poi",
-				elementType: "labels",
-				stylers: [
-					{visibility: "off"}
-				]
-			},
-			{
-				//don't show highways lables on the map
-				featureType: 'road.highway',
-				elementType: 'labels',
-				stylers: [
-					{visibility: "off"}
-				]
-			},
-			{
-				//don't show local road lables on the map
-				featureType: "road.local",
-				elementType: "labels.icon",
-				stylers: [
-					{visibility: "off"}
-				]
-			},
-			{
-				//don't show arterial road lables on the map
-				featureType: "road.arterial",
-				elementType: "labels.icon",
-				stylers: [
-					{visibility: "off"}
-				]
-			},
-			{
-				//don't show road lables on the map
-				featureType: "road",
-				elementType: "geometry.stroke",
-				stylers: [
-					{visibility: "off"}
-				]
-			},
-			//style different elements on the map
-			{
-				featureType: "transit",
-				elementType: "geometry.fill",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			},
-			{
-				featureType: "poi",
-				elementType: "geometry.fill",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			},
-			{
-				featureType: "poi.government",
-				elementType: "geometry.fill",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			},
-			{
-				featureType: "poi.sport_complex",
-				elementType: "geometry.fill",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			},
-			{
-				featureType: "poi.attraction",
-				elementType: "geometry.fill",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			},
-			{
-				featureType: "poi.business",
-				elementType: "geometry.fill",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			},
-			{
-				featureType: "transit",
-				elementType: "geometry.fill",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			},
-			{
-				featureType: "transit.station",
-				elementType: "geometry.fill",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			},
-			{
-				featureType: "landscape",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
+var style = [
+    {
+        elementType: "labels",
+        stylers: [{ saturation: saturation_value }]
+    },
+    {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [{ visibility: "off" }]
+    },
+    {
+        featureType: 'road.highway',
+        elementType: 'labels',
+        stylers: [{ visibility: "off" }]
+    },
+    {
+        featureType: "road.local",
+        elementType: "labels.icon",
+        stylers: [{ visibility: "off" }]
+    },
+    {
+        featureType: "road.arterial",
+        elementType: "labels.icon",
+        stylers: [{ visibility: "off" }]
+    },
+    {
+        featureType: "road",
+        elementType: "geometry.stroke",
+        stylers: [{ visibility: "off" }]
+    },
+    {
+        featureType: "transit",
+        elementType: "geometry.fill",
+        stylers: [
+            { hue: main_color },
+            { visibility: "on" },
+            { lightness: brightness_value },
+            { saturation: saturation_value }
+        ]
+    },
+    {
+        featureType: "landscape",
+        stylers: [
+            { hue: main_color },
+            { visibility: "on" },
+            { lightness: brightness_value },
+            { saturation: saturation_value }
+        ]
+    },
+    {
+        featureType: "road",
+        elementType: "geometry.fill",
+        stylers: [
+            { hue: main_color },
+            { visibility: "on" },
+            { lightness: brightness_value },
+            { saturation: saturation_value }
+        ]
+    },
+    {
+        featureType: "water",
+        elementType: "geometry",
+        stylers: [
+            { hue: main_color },
+            { visibility: "on" },
+            { lightness: brightness_value },
+            { saturation: saturation_value }
+        ]
+    }
+];
 
-			},
-			{
-				featureType: "road",
-				elementType: "geometry.fill",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			},
-			{
-				featureType: "road.highway",
-				elementType: "geometry.fill",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			},
-			{
-				featureType: "water",
-				elementType: "geometry",
-				stylers: [
-					{ hue: main_color },
-					{ visibility: "on" },
-					{ lightness: brightness_value },
-					{ saturation: saturation_value }
-				]
-			}
-		];
+function CustomZoomControl(controlDiv, map) {
+    var controlUIzoomIn = document.getElementById('cd-zoom-in');
+    var controlUIzoomOut = document.getElementById('cd-zoom-out');
 
-		function CustomZoomControl(controlDiv, map) {
-			//grap the zoom elements from the DOM and insert them in the map
-			var controlUIzoomIn= document.getElementById('cd-zoom-in'),
-				controlUIzoomOut= document.getElementById('cd-zoom-out');
-			controlDiv.appendChild(controlUIzoomIn);
-			controlDiv.appendChild(controlUIzoomOut);
+    controlDiv.appendChild(controlUIzoomIn);
+    controlDiv.appendChild(controlUIzoomOut);
 
-			// Setup the click event listeners and zoom-in or out according to the clicked element
-			google.maps.event.addDomListener(controlUIzoomIn, 'click', function() {
-				map.setZoom(map.getZoom()+1)
-			});
-			google.maps.event.addDomListener(controlUIzoomOut, 'click', function() {
-				map.setZoom(map.getZoom()-1)
-			});
-		}
-	
-      	function initMap() {
+    google.maps.event.addDomListener(controlUIzoomIn, 'click', function () {
+        map.setZoom(map.getZoom() + 1);
+    });
 
-	      	//set google map options
-			var map_options = {
-				center: new google.maps.LatLng(latitude, longitude),
-	          	zoom: 8,
-	          	panControl: false,
-				zoomControl: false,
-				mapTypeControl: false,
-				streetViewControl: false,
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				scrollwheel: false,
-				zoom: map_zoom,
-				styles: style
-			}
+    google.maps.event.addDomListener(controlUIzoomOut, 'click', function () {
+        map.setZoom(map.getZoom() - 1);
+    });
+}
 
-	        map = new google.maps.Map(document.getElementById('maps'), map_options);
+function initMap() {
+    var map_options = {
+        center: new google.maps.LatLng(myLat, myLng),
+        zoom: 14,
+        panControl: false,
+        zoomControl: false,
+        mapTypeControl: false,
+        streetViewControl: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false,
+        styles: style
+    };
 
-	        //add a custom marker to the map
-			var marker = new google.maps.Marker({
-				position: new google.maps.LatLng(latitude, longitude),
-				map: map,
-				visible: true,
-				icon: marker_url,
-			});
+    map = new google.maps.Map(document.getElementById('maps'), map_options);
 
-			var zoomControlDiv = document.createElement('div');
-			var zoomControl = new CustomZoomControl(zoomControlDiv, map);
+    // Add custom marker
+    new google.maps.Marker({
+        position: new google.maps.LatLng(myLat, myLng),
+        map: map,
+        visible: true,
+        icon: myMarkerx
+    });
 
-			//insert the zoom div on the top left of the map
-			map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
-
-  		}
+    // Add custom zoom buttons
+    var zoomControlDiv = document.createElement('div');
+    new CustomZoomControl(zoomControlDiv, map);
+    map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
+}
+</script>
