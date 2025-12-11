@@ -25,7 +25,7 @@
 	<!-- ==============================================
 	CSS VENDOR
 	=============================================== -->
-	<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/vendor/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="css/vendor/owl.theme.default.min.css">
@@ -67,8 +67,8 @@
 					<div class="col-sm-7 col-md-6">
 						<div class="topbar-right">
 							<ul class="topbar-menu">
-								<li><a href="contact-feedback.html" title="Give Feedback">Give Feedback</a></li>
-								<li><a href="Contact.html" title="Contact Us">Contact Us</a></li>
+								<!-- <li><a href="contact-feedback.html" title="Give Feedback">Give Feedback</a></li>
+								<li><a href="Contact.html" title="Contact Us">Contact Us</a></li> -->
 							</ul>
 							<ul class="topbar-sosmed">
 								<li>
@@ -93,9 +93,6 @@
 		<!-- TOPBAR LOGO SECTION -->
 		<div class="topbar-logo">
 			<div class="container">
-
-
-
 				<!-- NAVBAR SECTION -->
 				<div class="navbar navbar-main">
 
@@ -116,7 +113,7 @@
 
 							</a>
 							<br>
-							<img src="images/Medivesta-gif.gif" alt="" />
+							<img src="images/Medivesta-Header-GIF.gif" alt="" />
 							<br>
 
 							<nav class="navbar-collapse collapse">
@@ -214,6 +211,26 @@
 			<div id="slides" class="section banner">
 				<ul class="slides-container">
 					<li>
+						<video autoplay muted loop playsinline class="slider-video">
+							<source src="./images/PROFILE.mp4" type="video/mp4">
+							 <!-- <source src="https://drive.google.com/file/d/1QWy3KrGPMq8HQKtvpUIywHIGN6p-mJEq/view?usp=drive_link" type="video/mp4"> -->
+						</video>
+
+						<div class="overlay-bg"></div>
+						<div class="container">
+							<div class="wrap-caption">
+								<h2 class="caption-heading">Verified • Validated • Trusted</h2>
+								<p class="excerpt">Medivesta Laboratories is a world renowned laboratory focusing on
+									Research & Development and Analysis. <br> Being a member of the Dyvesta Group,
+									Medivesta
+									is certified with GLP and ISO 17025.</p>
+								<a href="about-company.html" class="btn btn-primary" title="LEARN MORE">LEARN MORE</a>
+								<a href="contact.html" class="btn btn-secondary" title="CONTACT US">CONTACT US</a>
+							</div>
+						</div>
+					</li>
+
+					<!-- <li>
 						<img src="images/slider-1.png" alt="">
 						<div class="overlay-bg"></div>
 						<div class="container">
@@ -254,7 +271,7 @@
 									class="btn btn-secondary" title="CONTACT US">CONTACT US</a>
 							</div>
 						</div>
-					</li>
+					</li> -->
 
 				</ul>
 
@@ -329,12 +346,13 @@
 							Our Services
 						</div>
 						<ul class="list">
-							<li><a href="" title="">Analytical Services</a></li>
-							<li><a href="" title="">Chemical Identification</a></li>
-							<li><a href="" title="">Feed Nutritional Analysis</a></li>
-							<li><a href="" title="">Mycotoxin Analysis</a></li>
-							<li><a href="" title="">Chemical Stability</a></li>
-							<li><a href="" title="">R&D Formulations</a></li>
+							<li><a href="services.html" title="">Analytical Services</a></li>
+							<li><a href="services.html" title="">Chemical Identification</a></li>
+							<li><a href="services.html" title="">Feed Nutritional Analysis</a></li>
+							<li><a href="services.html" title="">Mycotoxin Analysis</a></li>
+							<li><a href="services.html" title="">Stability Analysis</a></li>
+							<li><a href="services.html" title="">R&D Formulations</a></li>
+							<li><a href="services.html" title="">Microbiological Analysis</a></li>
 						</ul>
 					</div>
 				</div>
@@ -343,12 +361,17 @@
 						<div class="footer-title">
 							Subscribe
 						</div>
-						<p>Subscribe us to get more news</p>
-						<form action="#" class="footer-subscribe">
-							<input type="email" name="EMAIL" class="form-control" placeholder="enter your email">
-							<input id="p_submit" type="submit" value="send">
-							<label for="p_submit"><i class="fa fa-envelope"></i></label>
-							<p>Get latest updates and offers.</p>
+						<p>Subscribe us to get more updates</p>
+						<form action="subscribe.php" method="POST" class="footer-subscribe">
+							<div class="subscribe-row">
+								<input type="email" name="email" class="form-control subscribe-input"
+									placeholder="Enter your email" required>
+
+								<button type="submit" id="p_submit" class="subscribe-btn">
+									<i class="fa fa-envelope"></i>
+								</button>
+							</div>
+							<p>Get latest updates...</p>
 						</form>
 					</div>
 				</div>

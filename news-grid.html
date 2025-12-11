@@ -64,23 +64,23 @@
 					<div class="col-sm-7 col-md-6">
 						<div class="topbar-right">
 							<ul class="topbar-menu">
-								<li><a href="career.html" title="Career">Career</a></li>
+								<!-- <li><a href="career.html" title="Career">Career</a></li>
 								<li><a href="contact-feedback.html" title="Give Feedback">Give Feedback</a></li>
-								<li><a href="Contact.html" title="Contact Us">Contact Us</a></li>
+								<li><a href="Contact.html" title="Contact Us">Contact Us</a></li> -->
 							</ul>
 							<ul class="topbar-sosmed">
-							<li>
-								<a href="#"><i class="fa fa-facebook"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-instagram"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-pinterest"></i></a>
-							</li>
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-linkedin"></i></a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -101,7 +101,10 @@
 						</div>
 						<div class="body-content">
 							<div class="heading">Email Support</div>
-							info@medivesta.com
+							<a href="mailto:info@medivesta.com?subject=Customer Inquiry"
+								style="text-decoration:none; color:#333;">
+								info@medivesta.com
+							</a>
 						</div>
 					</div>
 					<!-- INFO 2 -->
@@ -111,7 +114,9 @@
 						</div>
 						<div class="body-content">
 							<div class="heading">Call Support</div>
-							+94 112 893 922
+							<a href="tel:+94112893922" style="text-decoration:none; color:#333;">
+								+94 112 893 922
+							</a>
 						</div>
 					</div>
 					<!-- INFO 3 -->
@@ -236,10 +241,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-12">
-					<div class="title-page">Grid Bar</div>
+					<div class="title-page">News & Events</div>
 					<ol class="breadcrumb">
-						<li><a href="index.html">News</a></li>
-						<li class="active">Grid Bar</li>
+						<li><a href="index.html">Home</a></li>
+						<li class="active">News & Events</li>
 					</ol>
 				</div>
 			</div>
@@ -456,12 +461,13 @@
 							Our Services
 						</div>
 						<ul class="list">
-							<li><a href="" title="">Analytical Services</a></li>
-							<li><a href="" title="">Chemical Identification</a></li>
-							<li><a href="" title="">Feed Nutritional Analysis</a></li>
-							<li><a href="" title="">Mycotoxin Analysis</a></li>
-							<li><a href="" title="">Chemical Stability</a></li>
-							<li><a href="" title="">R&D Formulations</a></li>
+							<li><a href="services.html" title="">Analytical Services</a></li>
+							<li><a href="services.html" title="">Chemical Identification</a></li>
+							<li><a href="services.html" title="">Feed Nutritional Analysis</a></li>
+							<li><a href="services.html" title="">Mycotoxin Analysis</a></li>
+							<li><a href="services.html" title="">Stability Analysis</a></li>
+							<li><a href="services.html" title="">R&D Formulations</a></li>
+							<li><a href="services.html" title="">Microbiological Analysis</a></li>
 						</ul>
 					</div>
 				</div>
@@ -470,12 +476,17 @@
 						<div class="footer-title">
 							Subscribe
 						</div>
-						<p>Subscribe us to get more news</p>
-						<form action="#" class="footer-subscribe">
-							<input type="email" name="EMAIL" class="form-control" placeholder="enter your email">
-							<input id="p_submit" type="submit" value="send">
-							<label for="p_submit"><i class="fa fa-envelope"></i></label>
-							<p>Get latest updates and offers.</p>
+						<p>Subscribe us to get more updates</p>
+						<form action="subscribe.php" method="POST" class="footer-subscribe">
+							<div class="subscribe-row">
+								<input type="email" name="email" class="form-control subscribe-input"
+									placeholder="Enter your email" required>
+
+								<button type="submit" id="p_submit" class="subscribe-btn">
+									<i class="fa fa-envelope"></i>
+								</button>
+							</div>
+							<p>Get latest updates...</p>
 						</form>
 					</div>
 				</div>

@@ -101,7 +101,10 @@
 						</div>
 						<div class="body-content">
 							<div class="heading">Email Support</div>
-							info@petro.com
+							<a href="mailto:info@medivesta.com?subject=Customer Inquiry"
+								style="text-decoration:none; color:#333;">
+								info@medivesta.com
+							</a>
 						</div>
 					</div>
 					<!-- INFO 2 -->
@@ -111,7 +114,9 @@
 						</div>
 						<div class="body-content">
 							<div class="heading">Call Support</div>
-							+62 123 6700 411
+							<a href="tel:+94112893922" style="text-decoration:none; color:#333;">
+								+94 112 893 922
+							</a>
 						</div>
 					</div>
 					<!-- INFO 3 -->
@@ -435,12 +440,13 @@
 							Our Services
 						</div>
 						<ul class="list">
-							<li><a href="" title="">Analytical Services</a></li>
-							<li><a href="" title="">Chemical Identification</a></li>
-							<li><a href="" title="">Feed Nutritional Analysis</a></li>
-							<li><a href="" title="">Mycotoxin Analysis</a></li>
-							<li><a href="" title="">Chemical Stability</a></li>
-							<li><a href="" title="">R&D Formulations</a></li>
+							<li><a href="services.html" title="">Analytical Services</a></li>
+							<li><a href="services.html" title="">Chemical Identification</a></li>
+							<li><a href="services.html" title="">Feed Nutritional Analysis</a></li>
+							<li><a href="services.html" title="">Mycotoxin Analysis</a></li>
+							<li><a href="services.html" title="">Stability Analysis</a></li>
+							<li><a href="services.html" title="">R&D Formulations</a></li>
+							<li><a href="services.html" title="">Microbiological Analysis</a></li>
 						</ul>
 					</div>
 				</div>
@@ -449,12 +455,17 @@
 						<div class="footer-title">
 							Subscribe
 						</div>
-						<p>Subscribe us to get more news</p>
-						<form action="#" class="footer-subscribe">
-							<input type="email" name="EMAIL" class="form-control" placeholder="enter your email">
-							<input id="p_submit" type="submit" value="send">
-							<label for="p_submit"><i class="fa fa-envelope"></i></label>
-							<p>Get latest updates and offers.</p>
+						<p>Subscribe us to get more updates</p>
+						<form action="subscribe.php" method="POST" class="footer-subscribe">
+							<div class="subscribe-row">
+								<input type="email" name="email" class="form-control subscribe-input"
+									placeholder="Enter your email" required>
+
+								<button type="submit" id="p_submit" class="subscribe-btn">
+									<i class="fa fa-envelope"></i>
+								</button>
+							</div>
+							<p>Get latest updates...</p>
 						</form>
 					</div>
 				</div>
