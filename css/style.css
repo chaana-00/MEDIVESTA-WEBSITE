@@ -1,8 +1,8 @@
 /*
-Template Name: Petro - Industrial HTML Template
-Template URI: rudhisasmito.com/demo/petro
-Author: Rudhi Sasmito
-Author URI: https://www.behance.net/rudhisasmito
+Medivesta Website
+Template URI: medivesta.com
+Author: Chanaka Sanjaya Bandara
+Author URI: https://chaana-00.github.io/MEDIVESTA-WEBSITE/
 Version: 1.0
 */
 /**
@@ -755,7 +755,7 @@ h5,
 .section-subheading {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
-  margin-top: 180px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -1308,10 +1308,10 @@ Back To Top Section
 /* 2.4. BOX ICON 2 */
 .box-icon-2 {
   margin-bottom: 40px;
-  padding: 30px 30px 60px 30px;
+  padding: 30px 30px 30px 30px;
   background-color: #eff3f6;
   border: 1px solid #dcdde1;
-  min-height: 250px;
+  min-height: 350px;
 }
 .box-icon-2 .icon {
   display: inline-block;
@@ -1322,6 +1322,7 @@ Back To Top Section
 }
 .box-icon-2 .body-content {
   color: #222222;
+  text-align: justify;
 }
 .box-icon-2 .body-content .heading {
   color: #041e42;
@@ -3750,7 +3751,7 @@ dl.hiw dd .lead {
  * -----------------------------------------------------------------------------
  */
 .footer {
-  padding: 200px 0 0 0;
+  padding: 80px 0 0 0;
   background-color: #041e42;
   color: #ffffff;
 }
@@ -4134,4 +4135,3 @@ dl.hiw dd .lead {
 }
 
 /*# sourceMappingURL=style.css.map */
-
